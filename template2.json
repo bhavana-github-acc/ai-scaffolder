@@ -1,0 +1,9 @@
+{
+  "project_name": "nlp-project",
+  "structure": {
+    "data": ["train.txt", "test.txt"],
+    "notebooks": ["preprocessing.ipynb"],
+    "scripts": ["preprocess.py", "train_model.py", "evaluate.py"],
+    "docs": ["readmeNLP.md", "requirementsNLP.md"]
+  }
+}
