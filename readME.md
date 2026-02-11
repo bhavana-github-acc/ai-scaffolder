@@ -60,7 +60,7 @@ $env:GEMINI_API_KEY="YOUR_API_KEY_HERE" #Windows Powershell
 
 ## Usage
 
-#Step 1. Generate Project Structure
+# Step 1) Generate Project Structure
 
 Given a template.json:
 
@@ -114,6 +114,9 @@ The tool reads all input files, applies the instructions via AI, and saves the r
 All AI prompts CLI commands used above are recorded in /ai-meta/AI_prompts and /ai-meta/CLI_cmds.txt.
 
 ---------------------------------------------------------------------------------------------------------------------------
+
+
+
 
 
 
