@@ -109,9 +109,10 @@ The tool reads all input files, applies the instructions via AI, and saves the r
 ---------------------------------------------------------------------------------------------------------------------------
 # AI Prompts
 
-All AI CLI prompts used above are recorded in /ai-meta/prompts.txt.
+All AI prompts CLI commands used above are recorded in /ai-meta/AI_prompts and /ai-meta/CLI_cmds.txt.
 
 ---------------------------------------------------------------------------------------------------------------------------
+
 
 
 
