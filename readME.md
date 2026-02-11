@@ -12,11 +12,11 @@ This tool is developed as part of a technical test for DeepDil.ai. It provides:
 ---------------------------------------------------------------------------------------------------------------------------
 ## Table of Contents
 
-Installation
+# Installation
 
-Setup
+# Setup
 
-Usage
+# Usage
 
 1. Generate Project Structure
 
@@ -52,9 +52,9 @@ pip install -r requirements.txt
 ## Setup
 
 I have chosen to use my own API key from Gemini. I used multiple in the case where I had reached my maximum usage of prompts; I have stored them in API_keys.txt (locally for security).
-
 LLM API key (Gemini):
-$env:GEMINI_API_KEY="YOUR_API_KEY_HERE"  # Windows PowerShell
+$env:GEMINI_API_KEY="YOUR_API_KEY_HERE" #Windows Powershell
+
 ---------------------------------------------------------------------------------------------------------------------------
 
 ## Usage
@@ -79,7 +79,6 @@ python scaffolderCLI.py -template template1.json
 This will create the root folder and all subfolders/files.
 
 
----------------------------------------------------------------------------------------------------------------------------
 # Step 2.1) Generate README
 
 To generate a professional README automatically using AI:
@@ -88,7 +87,6 @@ python scaffolderCLI.py -template template1.json --readme --api_key "YOUR_API_KE
 
 This reads the folder structure and creates README.md in the project root.
 
----------------------------------------------------------------------------------------------------------------------------
 # Step 2.2) Suggest Template
 
 To get an AI-generated template based on a description:
@@ -96,7 +94,6 @@ To get an AI-generated template based on a description:
 python scaffolderCLI.py -suggest "a cybersecurity maturity audit" --api_key "YOUR_API_KEY_HERE"
 This generates a new template_<description>.json file.
 
----------------------------------------------------------------------------------------------------------------------------
 # Step 3) Vibe Coding (Transformation Pipeline)
 
 Apply AI-powered transformations to multiple files according to instructions in instructions.md:
@@ -116,6 +113,7 @@ The tool reads all input files, applies the instructions via AI, and saves the r
 All AI interactions are recorded in /ai-meta/prompts.txt. Main prompts used:
 
 ---------------------------------------------------------------------------------------------------------------------------
+
 
 
 
