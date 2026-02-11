@@ -51,7 +51,9 @@ pip install -r requirements.txt
 ## Setup
 
 I have chosen to use my own API key from Gemini. I used multiple in the case where I had reached my maximum usage of prompts; I have stored them in API_keys.txt (locally for security).
+
 LLM API key (Gemini):
+
 $env:GEMINI_API_KEY="YOUR_API_KEY_HERE" #Windows Powershell
 
 ---------------------------------------------------------------------------------------------------------------------------
@@ -112,6 +114,7 @@ The tool reads all input files, applies the instructions via AI, and saves the r
 All AI prompts CLI commands used above are recorded in /ai-meta/AI_prompts and /ai-meta/CLI_cmds.txt.
 
 ---------------------------------------------------------------------------------------------------------------------------
+
 
 
 
