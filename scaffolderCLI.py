@@ -3,7 +3,8 @@
 $env:GEMINI_API_KEY="AIzaSyCu7N_Ym8LSWznaPEYgqApgzQPZadH52f8"
 python scaffolderCLI.py -t template1.json --readme
 """
-# ----------------- STEP 1: Create Project Structure -----------------
+#Step 1: Generating of the project folder structure
+
 import os
 import json
 import argparse
@@ -22,11 +23,11 @@ def create_structure(template_file):
     root = data.get("project_name")
     structure = data.get("structure")
 
-    # Create root folder
+    #Create root folder
     os.makedirs(root, exist_ok=True)
     print(f"Created root folder: {root}")
 
-    # Create subfolders and files
+    #Iterate and create subfolders
     for folder, files in structure.items():
         folder_path = os.path.join(root, folder)
         os.makedirs(folder_path, exist_ok=True)
@@ -38,8 +39,8 @@ def create_structure(template_file):
     print(f"\nProject '{root}' created successfully!")
     return root, structure
 
+#Step 2: Generation of readME with Gemini API
 
-# ----------------- STEP 2: Generate README using Gemini -----------------
 def generate_readme_gemini(project_name, structure):
     """
     Generates a professional README.md using Google Gemini (new API style).
@@ -61,8 +62,7 @@ with this folder structure:
 {structure_text}
 """
 
-    # Use a model available on your account (example: free-tier compatible)
-    model_name = "gemini-3-flash-preview"  # or check your console for available models
+    model_name = "gemini-3-flash-preview" 
 
     response = client.models.generate_content(
         model=model_name,
@@ -71,7 +71,6 @@ with this folder structure:
 
     readme_text = response.text
 
-    # Save README.md in project folder
     readme_path = os.path.join(project_name, "README.md")
     with open(readme_path, "w", encoding="utf-8") as f:
         f.write(readme_text)
@@ -79,8 +78,7 @@ with this folder structure:
     print(f"README.md generated in {readme_path}")
 
 
-
-# --- Step 2.2: template suggestion ---
+#Step 2.2: Given a topic from user, generate a template.json file
 def suggest_template(description, api_key):
     """
     Generates a template.json file using Gemini AI based on project description.
@@ -98,7 +96,10 @@ Requirements:
     response = client.models.generate_content(model="gemini-3-flash-preview", contents=prompt)
     template_text = response.text.strip()
 
-    filename = "template_suggested.json"
+    import re
+    safe_desc = re.sub(r'[^a-z0-9]+', '_', description.lower()).strip('_') #to create a template file with name as description of the suggestion
+    filename = f"template_{safe_desc}.json"
+
     with open(filename, "w", encoding="utf-8") as f:
         f.write(template_text)
 
@@ -108,16 +109,14 @@ Requirements:
 
 
 
-# ----------------- COMMAND-LINE INTERFACE -----------------
 
 
-# ----------------- COMMAND-LINE INTERFACE -----------------
-
+#COMMAND-LINE INTERFACE
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="AI Scaffolder CLI")
 
-    # Make -t and -suggest mutually exclusive
+    #Make -t and -suggest mutually exclusive
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument("-t", "--template", help="Path to template.json")
     group.add_argument("-suggest", type=str, help="Ask AI to suggest a template.json for this description")
@@ -127,7 +126,7 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    # Handle -suggest
+    #Handle -suggest
     if args.suggest:
         if not args.api_key:
             print("ERROR: --api_key is required for -suggest")
@@ -135,7 +134,7 @@ if __name__ == "__main__":
         suggest_template(args.suggest, args.api_key)
         exit(0)
 
-    # Handle -t
+    #Handle -t
     if args.template:
         try:
             root, structure = create_structure(args.template)
