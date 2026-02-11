@@ -1,0 +1,40 @@
+{
+  "project_name": "cyber-maturity-audit",
+  "structure": {
+    "01-initiation-and-scope": [
+      "audit-charter.md",
+      "stakeholder-registry.md",
+      "scope-definition.md",
+      "compliance-requirements.md"
+    ],
+    "02-framework-alignment": [
+      "nist-csf-mapping.md",
+      "iso-27001-crosswalk.md",
+      "cis-controls-v8-check.md",
+      "maturity-levels-definition.md"
+    ],
+    "03-evidence-collection": [
+      "policy-review-log.md",
+      "technical-configuration-review.md",
+      "interview-summaries.md",
+      "evidence-inventory.md"
+    ],
+    "04-analysis-and-scoring": [
+      "current-state-assessment.md",
+      "target-state-definition.md",
+      "gap-analysis-matrix.md",
+      "risk-exposure-report.md"
+    ],
+    "05-reporting-and-roadmap": [
+      "executive-summary.md",
+      "technical-findings-report.md",
+      "remediation-roadmap.md",
+      "budget-and-resource-estimates.md"
+    ],
+    "06-appendices": [
+      "glossary.md",
+      "reference-documentation.md",
+      "audit-log.md"
+    ]
+  }
+}
