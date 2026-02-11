@@ -90,6 +90,7 @@ This reads the folder structure and creates README.md in the project root.
 To get an AI-generated template based on a description:
 
 python scaffolderCLI.py -suggest "a cybersecurity maturity audit" --api_key "YOUR_API_KEY_HERE"
+
 This generates a new template_<description>.json file.
 
 # Step 3) Vibe Coding (Transformation Pipeline)
@@ -108,9 +109,10 @@ The tool reads all input files, applies the instructions via AI, and saves the r
 ---------------------------------------------------------------------------------------------------------------------------
 # AI Prompts
 
-All AI interactions are recorded in /ai-meta/prompts.txt. Main prompts used:
+All AI CLI prompts used above are recorded in /ai-meta/prompts.txt.
 
 ---------------------------------------------------------------------------------------------------------------------------
+
 
 
 
