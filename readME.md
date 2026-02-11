@@ -39,7 +39,8 @@ Vibe coding: Consolidates and transforms input files using detailed instructions
 
 Clone the repository:
 
-git clone https://github.com/<your-username>/ai-scaffolder.git
+git clone https://github.com/bhavana-github-acc/ai-scaffolder.git
+
 cd ai-scaffolder
 
 
@@ -115,6 +116,7 @@ The tool reads all input files, applies the instructions via AI, and saves the r
 All AI interactions are recorded in /ai-meta/prompts.txt. Main prompts used:
 
 ---------------------------------------------------------------------------------------------------------------------------
+
 
 
 
