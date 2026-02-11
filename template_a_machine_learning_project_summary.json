@@ -1,0 +1,27 @@
+{
+  "project_name": "ml-project-summary",
+  "structure": {
+    "docs": [
+      "overview.md",
+      "setup.md"
+    ],
+    "data": [
+      "data_source.md",
+      "preprocessing.md",
+      "feature_engineering.md"
+    ],
+    "models": [
+      "architecture.md",
+      "training_config.md",
+      "hyperparameters.md"
+    ],
+    "evaluation": [
+      "performance_metrics.md",
+      "error_analysis.md"
+    ],
+    "summary": [
+      "final_results.md",
+      "future_work.md"
+    ]
+  }
+}
