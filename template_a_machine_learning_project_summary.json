@@ -1,27 +1,25 @@
 {
   "project_name": "ml-project-summary",
   "structure": {
-    "docs": [
-      "overview.md",
-      "setup.md"
-    ],
     "data": [
-      "data_source.md",
-      "preprocessing.md",
-      "feature_engineering.md"
+      "data-source.md",
+      "preprocessing-steps.md"
     ],
     "models": [
-      "architecture.md",
-      "training_config.md",
+      "architecture-details.md",
       "hyperparameters.md"
     ],
-    "evaluation": [
-      "performance_metrics.md",
-      "error_analysis.md"
+    "notebooks": [
+      "eda-summary.md",
+      "training-log.md"
     ],
-    "summary": [
-      "final_results.md",
-      "future_work.md"
+    "evaluation": [
+      "metrics-report.md",
+      "confusion-matrix-analysis.md"
+    ],
+    "documentation": [
+      "setup-guide.md",
+      "api-definitions.md"
     ]
   }
 }
