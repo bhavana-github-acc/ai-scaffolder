@@ -12,11 +12,11 @@ This tool is developed as part of a technical test for DeepDil.ai. It provides:
 ---------------------------------------------------------------------------------------------------------------------------
 ## Table of Contents
 
-# Installation
+Installation
 
-# Setup
+Setup
 
-# Usage
+Usage
 
 1. Generate Project Structure
 
@@ -33,7 +33,6 @@ Template suggestion: Generates an ideal template.json from a project description
 Vibe coding: Consolidates and transforms input files using detailed instructions.
 
 ---------------------------------------------------------------------------------------------------------------------------
-
 
 ## Installation
 
@@ -78,7 +77,6 @@ python scaffolderCLI.py -template template1.json
 
 This will create the root folder and all subfolders/files.
 
-
 # Step 2.1) Generate README
 
 To generate a professional README automatically using AI:
@@ -92,6 +90,7 @@ This reads the folder structure and creates README.md in the project root.
 To get an AI-generated template based on a description:
 
 python scaffolderCLI.py -suggest "a cybersecurity maturity audit" --api_key "YOUR_API_KEY_HERE"
+
 This generates a new template_<description>.json file.
 
 # Step 3) Vibe Coding (Transformation Pipeline)
@@ -110,9 +109,12 @@ The tool reads all input files, applies the instructions via AI, and saves the r
 ---------------------------------------------------------------------------------------------------------------------------
 # AI Prompts
 
-All AI interactions are recorded in /ai-meta/prompts.txt. Main prompts used:
+All AI CLI prompts used above are recorded in /ai-meta/prompts.txt.
 
 ---------------------------------------------------------------------------------------------------------------------------
+
+
+
 
 
 
