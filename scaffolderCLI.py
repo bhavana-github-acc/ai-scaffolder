@@ -55,7 +55,7 @@ def generate_readme_gemini(project_name, structure):
 
     prompt = f"""
 Generate a professional README.md for a project named '{project_name}'
-with this folder structure:
+with this folder structure provided below. Do not invent dates that are not explicitly present:
 
 {structure_text}
 """
@@ -146,17 +146,12 @@ def vibe_transform(instructions_file, input_files, output_file, api_key=None):
     Now apply the instructions to the files and produce the transformed output.
     """
 
-
     # 4) Send to AI
-    print("\n========= DEBUG: FINAL PROMPT SENT TO GEMINI =========\n")
-    print(prompt)
-    print("\n========= END DEBUG PROMPT =========\n")
 
     if api_key:
         client = genai.Client(api_key=api_key)
     else:
         client = genai.Client()  #environment variable
-
 
     response = client.models.generate_content(
         model="gemini-3-flash-preview",
