@@ -12,11 +12,11 @@ This tool is developed as part of a technical test for DeepDil.ai. It provides:
 ---------------------------------------------------------------------------------------------------------------------------
 ## Table of Contents
 
-# Installation
+Installation
 
-# Setup
+Setup
 
-# Usage
+Usage
 
 1. Generate Project Structure
 
@@ -33,7 +33,6 @@ Template suggestion: Generates an ideal template.json from a project description
 Vibe coding: Consolidates and transforms input files using detailed instructions.
 
 ---------------------------------------------------------------------------------------------------------------------------
-
 
 ## Installation
 
@@ -113,6 +112,7 @@ The tool reads all input files, applies the instructions via AI, and saves the r
 All AI interactions are recorded in /ai-meta/prompts.txt. Main prompts used:
 
 ---------------------------------------------------------------------------------------------------------------------------
+
 
 
 
