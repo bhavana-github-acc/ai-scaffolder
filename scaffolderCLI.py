@@ -1,3 +1,8 @@
+#proper working
+"""
+$env:GEMINI_API_KEY="AIzaSyCu7N_Ym8LSWznaPEYgqApgzQPZadH52f8"
+python scaffolderCLI.py -t template1.json --readme
+"""
 # ----------------- STEP 1: Create Project Structure -----------------
 import os
 import json
@@ -74,23 +79,69 @@ with this folder structure:
     print(f"README.md generated in {readme_path}")
 
 
+
+# --- Step 2.2: template suggestion ---
+def suggest_template(description, api_key):
+    """
+    Generates a template.json file using Gemini AI based on project description.
+    """
+    client = genai.Client(api_key=api_key)
+    prompt = f"""
+Generate a JSON template for a project based on this description:
+'{description}'
+
+Requirements:
+- project_name: short, lowercase, hyphenated
+- structure: folders as keys, each with a list of markdown files
+- output ONLY valid JSON, no extra text
+"""
+    response = client.models.generate_content(model="gemini-3-flash-preview", contents=prompt)
+    template_text = response.text.strip()
+
+    filename = "template_suggested.json"
+    with open(filename, "w", encoding="utf-8") as f:
+        f.write(template_text)
+
+    print(f"Suggested template saved as {filename}")
+    print("Here is the generated template:\n")
+    print(template_text)
+
+
+
 # ----------------- COMMAND-LINE INTERFACE -----------------
 
 
 # ----------------- COMMAND-LINE INTERFACE -----------------
+
+
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-t", "--template", required=True, help="Path to template.json")
+    parser = argparse.ArgumentParser(description="AI Scaffolder CLI")
+
+    # Make -t and -suggest mutually exclusive
+    group = parser.add_mutually_exclusive_group(required=True)
+    group.add_argument("-t", "--template", help="Path to template.json")
+    group.add_argument("-suggest", type=str, help="Ask AI to suggest a template.json for this description")
+
     parser.add_argument("--readme", action="store_true", help="Generate README.md using Gemini")
+    parser.add_argument("--api_key", type=str, help="Your Gemini API key (required for -suggest)")
+
     args = parser.parse_args()
 
-    # Step 1: Create folders/files
-    try:
-        root, structure = create_structure(args.template)
-    except ValueError as e:
-        print(e)
-        exit(1)
+    # Handle -suggest
+    if args.suggest:
+        if not args.api_key:
+            print("ERROR: --api_key is required for -suggest")
+            exit(1)
+        suggest_template(args.suggest, args.api_key)
+        exit(0)
 
-    # Step 2: Generate README
-    if args.readme:
-        generate_readme_gemini(root, structure)
+    # Handle -t
+    if args.template:
+        try:
+            root, structure = create_structure(args.template)
+        except ValueError as e:
+            print(e)
+            exit(1)
+
+        if args.readme:
+            generate_readme_gemini(root, structure)
