@@ -1,4 +1,4 @@
-AI Scaffolder CLI
+###AI Scaffolder CLI
 
 A Python CLI tool for generating project structures and leveraging AI for documentation and content transformation.
 
@@ -10,7 +10,7 @@ This tool is developed as part of a technical test for DeepDil.ai. It provides:
 4) Advanced “vibe” coding: AI-powered transformation of multiple input files according to instructions.
    
 ---------------------------------------------------------------------------------------------------------------------------
-Table of Contents
+##Table of Contents
 
 Installation
 
@@ -35,7 +35,7 @@ Vibe coding: Consolidates and transforms input files using detailed instructions
 ---------------------------------------------------------------------------------------------------------------------------
 
 
-Installation
+##Installation
 
 Clone the repository:
 
@@ -48,17 +48,17 @@ Install dependencies:
 pip install -r requirements.txt
 ---------------------------------------------------------------------------------------------------------------------------
 
-Setup
+##Setup
 
-I have chosen to use my own API key from Gemini. I used multiple in the case where I had reached my maximum usage of prompts; I have stored them in API_keys.txt.
+I have chosen to use my own API key from Gemini. I used multiple in the case where I had reached my maximum usage of prompts; I have stored them in API_keys.txt (locally for security).
 
 LLM API key (Gemini):
 
 $env:GEMINI_API_KEY="YOUR_API_KEY_HERE"  # Windows PowerShell
 ---------------------------------------------------------------------------------------------------------------------------
 
-Usage
-Step 1. Generate Project Structure
+##Usage
+#Step 1. Generate Project Structure
 
 Given a template.json:
 
@@ -80,7 +80,7 @@ This will create the root folder and all subfolders/files.
 
 
 ---------------------------------------------------------------------------------------------------------------------------
-Step 2.1 Generate README
+#Step 2.1 Generate README
 
 To generate a professional README automatically using AI:
 
@@ -89,7 +89,7 @@ python scaffolderCLI.py -template template1.json --readme --api_key "YOUR_API_KE
 
 This reads the folder structure and creates README.md in the project root.
 ---------------------------------------------------------------------------------------------------------------------------
-Step 2.2) Suggest Template
+#Step 2.2) Suggest Template
 
 To get an AI-generated template based on a description:
 
@@ -98,12 +98,11 @@ python scaffolderCLI.py -suggest "a cybersecurity maturity audit" --api_key "YOU
 
 This generates a new template_<description>.json file.
 ---------------------------------------------------------------------------------------------------------------------------
-Step 3) Vibe Coding (Transformation Pipeline)
+#Step 3) Vibe Coding (Transformation Pipeline)
 
 Apply AI-powered transformations to multiple files according to instructions in instructions.md:
 
 python scaffolderCLI.py -vibe instructions.md --in meeting1.md meeting2.md --out summary.md --api_key "YOUR_API_KEY_HERE"
-
 
 Example instruction file (instructions.md):
 
@@ -113,7 +112,7 @@ Highlight key decisions and next steps.
 
 The tool reads all input files, applies the instructions via AI, and saves the result in summary.md.
 ---------------------------------------------------------------------------------------------------------------------------
-AI Prompts
+#AI Prompts
 
 All AI interactions are recorded in /ai-meta/prompts.txt. Main prompts used:
 
@@ -123,3 +122,4 @@ Template suggestion: Generates an ideal template.json from a project description
 
 Vibe coding: Consolidates and transforms input files using detailed instructions.
 --------------------------------
+
