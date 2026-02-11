@@ -1,0 +1,22 @@
+CLI Prompts used for each step:
+
+Step 1) Generating files from template1.json:
+
+python scaffolderCLI.py --template template1.json
+
+Step 2.1) Creating readME for template1.json
+
+$env:GEMINI_API_KEY="Your_API_Key"
+python scaffolderCLI.py -t template1.json --readme
+
+Step 2.2) Creating a template based on suggestion of topic given
+
+python scaffolderCLI.py -suggest "a cybersecurity maturity audit" --api_key "Your_API_KEY"
+
+python scaffolderCLI.py -suggest "a machine learning project summary" --api_key "Your_API_KEY"
+
+Step 3) AI-powered file processing feature - Vibe coding for an AI to follow instructions to obtain a result
+
+python scaffolderCLI.py -vibe "vibe_test/instructions.md" --in "vibe_test/meeting1.md" "vibe_test/meeting2.md" --out "vibe_test/summary.md" --api_key "Your_API_KEY"
+
+

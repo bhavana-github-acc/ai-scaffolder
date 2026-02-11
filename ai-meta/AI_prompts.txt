@@ -1,0 +1,15 @@
+AI Prompts used:
+
+=== MAIN AI PROMPTS USED IN AI-SCAFFOLDER ===
+
+1. README GENERATION PROMPT:
+"Generate a professional README.md for a project named '{project_name}'
+with this folder structure... Do not invent dates that are not explicitly present."
+
+2. TEMPLATE SUGGESTION PROMPT:
+"Generate a JSON template for a project based on this description: '{description}'...
+Output ONLY valid JSON."
+
+3. VIBE CODING PROMPT:
+"You MUST follow the instructions below... Now apply the instructions to the files
+and produce the transformed output."
