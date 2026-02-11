@@ -77,7 +77,6 @@ python scaffolderCLI.py -template template1.json
 
 This will create the root folder and all subfolders/files.
 
-
 # Step 2.1) Generate README
 
 To generate a professional README automatically using AI:
@@ -112,6 +111,7 @@ The tool reads all input files, applies the instructions via AI, and saves the r
 All AI interactions are recorded in /ai-meta/prompts.txt. Main prompts used:
 
 ---------------------------------------------------------------------------------------------------------------------------
+
 
 
 
